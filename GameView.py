@@ -34,17 +34,28 @@ class GameView:
 
         # tank1 is a
         tank1 = model.player1
+        tank2 = model.player2
         # !!!The order of blits matter!!!
 
         tank1_img = pygame.image.load("Tank1.png").convert_alpha()
+        tank2_img = pygame.image.load("Tank1.png").convert_alpha()
 
         # Drawing the background
         self._screen.blit(self._background, (0, 0))
 
-        # Drawing the image
-        self._screen.blit(tank1_img, (tank1.x, tank1.y))
+        # Drawing Tank1
+        self._screen.blit(
+            pygame.transform.rotate(tank1_img, tank1.angle), (tank1.x, tank1.y)
+        )
+
+        # Drawing Tank2
+        self._screen.blit(
+            pygame.transform.rotate(tank2_img, tank2.angle), (tank2.x, tank2.y)
+        )
 
         # Only for debugging purposes, shows hitbox
+
         pygame.draw.rect(self._screen, (255, 0, 0), tank1.hitbox)
+        pygame.draw.rect(self._screen, (255, 255, 0), tank2.hitbox)
 
         pygame.display.flip()

@@ -24,5 +24,13 @@ class GameModel:
         self.HEALTH = 2
 
         # Making Player 1 Tank & Bullet. Same sprite Group
-        self.player1 = Tank((200, 0), self._p1, self.HEALTH, self.SPEED)
-        self.bullet1 = Bullet(self._p1)
+        self.player1 = Tank((200, 100), self._p1, self.HEALTH, self.SPEED)
+        self.bullet1 = Bullet(
+            self._p1, self.player1.x, self.player1.y, self.player1.angle
+        )
+
+        # Making Player 2 Tank & Bullet. Same sprite Group
+        self.player2 = Tank((400, 100), self._p2, self.HEALTH, self.SPEED)
+        self.bullet2 = Bullet(
+            self._p2, self.player2.x, self.player2.y, self.player2.angle
+        )

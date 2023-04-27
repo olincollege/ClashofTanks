@@ -2,37 +2,33 @@
 
 import pygame
 
-pygame.init()
+from GameView import GameView
+from GameModel import GameModel
+from GameController import GameController
 
 
-# WIP Only to demonstrate how the super loop works. ALl this will be abstracted into a class later.
-screen = pygame.display.set_mode((500, 500))
-pygame.display.set_caption("Atari 2600 Tank")
-background = pygame.Surface(screen.get_size())
-background = background.convert()
-background.fill((250, 250, 250))
+class Game:
+    def __init__(self):
+        # Initializes everything
+        pygame.init()
+        self.model = GameModel()
+        self.controller = GameController(self.model)
 
+        self.view = GameView()
 
-# Display some text
-font = pygame.font.Font(None, 36)
-text = font.render("Hello There", 1, (10, 10, 10))
-
-# Blit everything to the screen
-screen.blit(background, (0, 0))
-pygame.display.flip()
-
-
-# Our main function which houses the super loop
-def main():
-    ##Super loop
-    while True:
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                return
-
-        screen.blit(background, (0, 0))
-        pygame.display.flip()
+    # Super/Game loop
+    def main(self):
+        while True:
+            for event in pygame.event.get():
+                # If input was made
+                if event.type == pygame.KEYDOWN:
+                    self.controller.inputs(event.key)
+                # If user wants to quit
+                if event.type == pygame.QUIT:
+                    return
+                self.view.update(self.model)
 
 
 if __name__ == "__main__":
-    main()
+    game = Game()
+    game.main()

@@ -1,11 +1,11 @@
 """Contains the Tank class"""
 
 import pygame
-from math import sin, cos
+from math import sin, cos, radians
 
 
 class Tank(pygame.sprite.Sprite):
-    def __init__(self, pos, groups, health, speed):
+    def __init__(self, pos, groups, health, speed, angle=0):
         """
             Initializes the Tank object
         Args:
@@ -22,6 +22,7 @@ class Tank(pygame.sprite.Sprite):
         super().__init__(groups)
 
         self.OFFSET = 20
+        self._angle = angle
 
         self._x = pos[0]
         self._y = pos[1]
@@ -44,15 +45,32 @@ class Tank(pygame.sprite.Sprite):
     def hitbox(self):
         return self._hitbox
 
-    def move(self, angle):
+    @property
+    def angle(self):
+        return self._angle
+
+    @angle.setter
+    def angle(self, angle):
+        self._angle = angle
+
+    @property
+    def speed(self):
+        return self._speed
+
+    def move(self, direction):
         """
         Moves the x & y location of the
         tank based on the angle given and
         constant speed already declared
 
         Args:
-            angle: An int representing the degree
-            the Tank is facing
+            direction: An int representing whether the tank is going forward or backward
         """
-        self._x += self._speed * cos(angle)
-        self._y += self._speed * sin(angle)
+        self._x += direction * self._speed * cos(radians(self._angle))
+        self._y += direction * self._speed * sin(radians(-self._angle))
+
+        self._hitbox.x = self._x + self.OFFSET
+        self._hitbox.y = self._y + self.OFFSET
+
+    def rotate(self, angle):
+        self._angle += angle
