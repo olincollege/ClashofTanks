@@ -24,11 +24,23 @@ class GameController:
             pygame.K_w: lambda: self._model.player1.move(self._move),
             pygame.K_s: lambda: self._model.player1.move(-self._move),
             pygame.K_d: lambda: self._model.player1.rotate(-self._turn),
+            pygame.K_e: lambda: self._model.bullet1.moving(
+                True,
+                self._model.player1.x,
+                self._model.player1.y,
+                self._model.player1.angle,
+            ),
             # Player 2 Keys
             pygame.K_j: lambda: self._model.player2.rotate(self._turn),
             pygame.K_i: lambda: self._model.player2.move(self._move),
             pygame.K_k: lambda: self._model.player2.move(-self._move),
             pygame.K_l: lambda: self._model.player2.rotate(-self._turn),
+            pygame.K_o: lambda: self._model.bullet2.moving(
+                True,
+                self._model.player2.x,
+                self._model.player2.y,
+                self._model.player2.angle,
+            ),
         }
 
     def inputs(self, input):

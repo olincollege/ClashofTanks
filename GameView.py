@@ -44,17 +44,31 @@ class GameView:
         self._screen.blit(self._background, (0, 0))
 
         # Drawing Tank1
+        img1 = pygame.transform.rotate(tank1_img, tank1.angle)
         self._screen.blit(
-            pygame.transform.rotate(tank1_img, tank1.angle), (tank1.x, tank1.y)
+            img1,
+            (
+                tank1.x - int(img1.get_width() / 2),
+                tank1.y - int(img1.get_height() / 2),
+            ),
         )
 
         # Drawing Tank2
+        img2 = pygame.transform.rotate(tank2_img, tank2.angle)
         self._screen.blit(
-            pygame.transform.rotate(tank2_img, tank2.angle), (tank2.x, tank2.y)
+            img2,
+            (
+                tank2.x - int(img2.get_width() / 2),
+                tank2.y - int(img2.get_height() / 2),
+            ),
         )
-
         # Only for debugging purposes, shows hitbox
 
+        if model.bullet1._moving == True:
+            pygame.draw.rect(self._screen, (100, 0, 200), model.bullet1.bullet)
+
+        if model.bullet2._moving == True:
+            pygame.draw.rect(self._screen, (100, 0, 200), model.bullet2.bullet)
         pygame.draw.rect(self._screen, (255, 0, 0), tank1.hitbox)
         pygame.draw.rect(self._screen, (255, 255, 0), tank2.hitbox)
 

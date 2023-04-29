@@ -1,7 +1,6 @@
 """"Model"""
 
 import pygame
-
 from Tank import Tank
 from Bullet import Bullet
 
@@ -18,6 +17,8 @@ class GameModel:
         # Initalizing Groups
         self._p1 = pygame.sprite.Group()
         self._p2 = pygame.sprite.Group()
+        self.score1 = 0
+        self.score2 = 0
 
         # Constants
         self.SPEED = 2
@@ -34,3 +35,36 @@ class GameModel:
         self.bullet2 = Bullet(
             self._p2, self.player2.x, self.player2.y, self.player2.angle
         )
+
+    def update(self):
+        self.shooting(self.bullet1, self.player1)
+        self.shooting(self.bullet2, self.player2)
+
+        if pygame.Rect.colliderect(self.bullet1.bullet, self.player2.hitbox):
+            self.bullet1.moving(
+                False, self.player1.x, self.player1.y, self.player1.angle
+            )
+            self.score1 += 1
+
+        if pygame.Rect.colliderect(self.bullet2.bullet, self.player1.hitbox):
+            self.bullet2.moving(
+                False, self.player2.x, self.player2.y, self.player2.angle
+            )
+            self.score2 += 1
+
+        # Check winner
+        if self.score1 == 10:
+            print("P1 wins")
+            self.score1 = 0
+        if self.score2 == 10:
+            print("P2 Wins")
+            self.score2 = 0
+
+    # Helper Functions
+    def shooting(self, bullet, player):
+        if bullet._moving == True:
+            # Moves for
+            if abs(bullet.time - pygame.time.get_ticks()) > 1000:
+                bullet.moving(False, player.x, player.y, player.angle)
+            else:
+                bullet.move()

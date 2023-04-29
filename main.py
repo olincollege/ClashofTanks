@@ -26,7 +26,9 @@ class Game:
                 # If user wants to quit
                 if event.type == pygame.QUIT:
                     return
-                self.view.update(self.model)
+
+            self.model.update()
+            self.view.update(self.model)
 
 
 if __name__ == "__main__":

@@ -21,7 +21,7 @@ class Tank(pygame.sprite.Sprite):
 
         super().__init__(groups)
 
-        self.OFFSET = 20
+        self.OFFSET = -20
         self._angle = angle
 
         self._x = pos[0]
@@ -29,7 +29,7 @@ class Tank(pygame.sprite.Sprite):
         self._health = health
         self._speed = speed
         self._hitbox = pygame.Rect(
-            self._x + self.OFFSET, self._y + self.OFFSET, 20, 20
+            self._x + self.OFFSET, self._y + self.OFFSET, 37, 37
         )  # A rectangle object that functions as a hitbox. Useful for rect.collide
 
     # Getter Methods
