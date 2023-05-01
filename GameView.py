@@ -19,10 +19,12 @@ class GameView:
 
         """
         # Initalizing the window screen
-        self._screen = pygame.display.set_mode((500, 500))
+        pygame.font.get_init()
+
+        self._screen = pygame.display.set_mode((1000, 500))
         pygame.display.set_caption("Atari 2600 Tank")
         self._background = pygame.Surface(self._screen.get_size()).convert()
-        self._color = (250, 250, 250)
+        self._color = (153, 0, 0)
         self._background.fill(self._color)
 
     def update(self, model):
@@ -32,16 +34,21 @@ class GameView:
             that contains all information regarding to
             the model of the game"""
 
-        # tank1 is a
+        # saving which player is which
         tank1 = model.player1
         tank2 = model.player2
-        # !!!The order of blits matter!!!
 
+        # Loading the png files for the tanks
         tank1_img = pygame.image.load("Tank1.png").convert_alpha()
         tank2_img = pygame.image.load("Tank1.png").convert_alpha()
 
         # Drawing the background
         self._screen.blit(self._background, (0, 0))
+
+        # Drawing Scoreboard
+        font1 = pygame.font.SysFont("freesanbold.ttf", 50)
+        scoreboard = font1.render(model.scoreboard, False, (230, 191, 0))
+        self._screen.blit(scoreboard, (465, 60))
 
         # Drawing Tank1
         img1 = pygame.transform.rotate(tank1_img, tank1.angle)
@@ -62,14 +69,25 @@ class GameView:
                 tank2.y - int(img2.get_height() / 2),
             ),
         )
-        # Only for debugging purposes, shows hitbox
 
+        # Draw Bullets
         if model.bullet1._moving == True:
-            pygame.draw.rect(self._screen, (100, 0, 200), model.bullet1.bullet)
+            pygame.draw.rect(self._screen, (0, 0, 0), model.bullet1.bullet)
 
         if model.bullet2._moving == True:
-            pygame.draw.rect(self._screen, (100, 0, 200), model.bullet2.bullet)
-        pygame.draw.rect(self._screen, (255, 0, 0), tank1.hitbox)
-        pygame.draw.rect(self._screen, (255, 255, 0), tank2.hitbox)
+            pygame.draw.rect(self._screen, (0, 0, 200), model.bullet2.bullet)
+
+        # Drawing Obstacles
+        for row in model.map.layout:
+            for column in row:
+                if column != 0:
+                    pygame.draw.rect(self._screen, (230, 191, 0), column)
 
         pygame.display.flip()
+
+    def splashpage(self):
+        # Drawing the background
+        self._screen.blit(self._background, (0, 0))
+        font1 = pygame.font.SysFont("freesanbold.ttf", 50)
+        scoreboard = font1.render("COMBAT", False, (230, 191, 0))
+        self._screen.blit(scoreboard, (465, 60))

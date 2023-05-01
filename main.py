@@ -9,11 +9,10 @@ from GameController import GameController
 
 class Game:
     def __init__(self):
-        # Initializes everything
+        # Initializes MVC
         pygame.init()
         self.model = GameModel()
         self.controller = GameController(self.model)
-
         self.view = GameView()
 
     # Super/Game loop

@@ -2,6 +2,7 @@
 
 import pygame
 from math import sin, cos, radians
+from random import randint
 
 
 class Bullet(pygame.sprite.Sprite):
@@ -14,21 +15,21 @@ class Bullet(pygame.sprite.Sprite):
         *groups: a pygame.sprite.Group(). Identifies which
         group this object will be part of."""
 
-    def __init__(self, groups, x, y, angle, size=10):
+    def __init__(self, groups, x, y, angle, size=5):
         super().__init__(groups)
 
         self.OFFSET = -5
         self._angle = angle
         self._moving = False
         self.time = 0
-        self._speed = 1
+        self._speed = 0.5
 
         self._size = size
         self._x = x
         self._y = y
         self._angle = angle
         self.bullet = pygame.Rect(
-            self._x + self.OFFSET, self._y + self.OFFSET, 5, 5
+            self._x + self.OFFSET, self._y + self.OFFSET, size, size
         )
 
     @property
@@ -78,3 +79,6 @@ class Bullet(pygame.sprite.Sprite):
         self.bullet.y = self._y
 
         self._moving = bool
+
+    def ricochet(self):
+        self._angle = 160 + self._angle

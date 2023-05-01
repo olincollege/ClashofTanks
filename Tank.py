@@ -23,6 +23,7 @@ class Tank(pygame.sprite.Sprite):
 
         self.OFFSET = -20
         self._angle = angle
+        self.lastdir = 1
 
         self._x = pos[0]
         self._y = pos[1]
@@ -30,7 +31,7 @@ class Tank(pygame.sprite.Sprite):
         self._speed = speed
         self._hitbox = pygame.Rect(
             self._x + self.OFFSET, self._y + self.OFFSET, 37, 37
-        )  # A rectangle object that functions as a hitbox. Useful for rect.collide
+        )
 
     # Getter Methods
     @property
@@ -66,6 +67,7 @@ class Tank(pygame.sprite.Sprite):
         Args:
             direction: An int representing whether the tank is going forward or backward
         """
+        self.lastdir = direction
         self._x += direction * self._speed * cos(radians(self._angle))
         self._y += direction * self._speed * sin(radians(-self._angle))
 
