@@ -41,6 +41,9 @@ class GameController:
                 self._model.player2.y,
                 self._model.player2.angle,
             ),
+            # Other keyboard inputs
+            pygame.K_SPACE: lambda: self._model.restart(),
+            pygame.K_s: lambda: self._model.start(False),
         }
 
     def inputs(self, input):

@@ -22,7 +22,8 @@ class GameModel:
         self.score2 = 0
         self.map = Obstacles(1)
         self.scoreboard = f"{self.score1} : {self.score2}"
-        self.gameover = False
+        self._gameover = True
+        self._splash = True
 
         # Constants
         self.SPEED = 2
@@ -51,6 +52,7 @@ class GameModel:
                 False, self.player1.x, self.player1.y, self.player1.angle
             )
             self.score1 += 1
+            self.next_round()
 
         # Player 2's bullet hitting player 1
         if pygame.Rect.colliderect(self.bullet2.bullet, self.player1.hitbox):
@@ -58,6 +60,7 @@ class GameModel:
                 False, self.player2.x, self.player2.y, self.player2.angle
             )
             self.score2 += 1
+            self.next_round()
 
         # Obstacle Collision Detection
         for row in self.map.layout:
@@ -76,17 +79,68 @@ class GameModel:
                     if pygame.Rect.colliderect(self.player2.hitbox, obstacle):
                         self.player2.move(self.player2.lastdir * -1)
 
+        win_score = 10
         # Check winner
-        if self.score1 == 10:
+        if self.score1 == win_score:
             self.scoreboard = "P1 wins"
-            self.gameover = True
-        elif self.score2 == 10:
+            self._gameover = True
+        elif self.score2 == win_score:
             self.scoreboard = "P2 Wins"
-            self.gameover = True
+            self._gameover = True
 
         # Scoreboard update
         else:
             self.scoreboard = f"{self.score1} : {self.score2}"
+
+    def next_round(self):
+        # Making Player 1 Tank & Bullet. Same sprite Group
+        self.player1 = Tank((150, 250), self._p1, self.HEALTH, self.SPEED)
+        self.bullet1 = Bullet(
+            self._p1, self.player1.x, self.player1.y, self.player1.angle
+        )
+
+        # Making Player 2 Tank & Bullet. Same sprite Group
+        self.player2 = Tank((850, 250), self._p2, self.HEALTH, self.SPEED, 180)
+        self.bullet2 = Bullet(
+            self._p2, self.player2.x, self.player2.y, self.player2.angle
+        )
+
+    def restart(self):
+        if not self._gameover:
+            return
+        self.score1 = 0
+        self.score2 = 0
+        self.map = Obstacles(1)
+        self.scoreboard = f"{self.score1} : {self.score2}"
+        self._gameover = False
+
+        # Making Player 1 Tank & Bullet. Same sprite Group
+        self.player1 = Tank((150, 250), self._p1, self.HEALTH, self.SPEED)
+        self.bullet1 = Bullet(
+            self._p1, self.player1.x, self.player1.y, self.player1.angle
+        )
+
+        # Making Player 2 Tank & Bullet. Same sprite Group
+        self.player2 = Tank((850, 250), self._p2, self.HEALTH, self.SPEED, 180)
+        self.bullet2 = Bullet(
+            self._p2, self.player2.x, self.player2.y, self.player2.angle
+        )
+
+    @property
+    def gameover(self):
+        return self._gameover
+
+    @property
+    def splash(self):
+        return self._splash
+
+    @splash.setter
+    def ended(self, value):
+        self._splash = value
+
+    def start(self, value):
+        self._gameover = value
+        self._splash = value
 
     # Helper Functions
     def shooting(self, bullet, player):

@@ -24,8 +24,9 @@ class GameView:
         self._screen = pygame.display.set_mode((1000, 500))
         pygame.display.set_caption("Atari 2600 Tank")
         self._background = pygame.Surface(self._screen.get_size()).convert()
-        self._color = (153, 0, 0)
+        self._color = (0, 0, 0)
         self._background.fill(self._color)
+        self.timing = pygame.time.get_ticks()
 
     def update(self, model):
         """Update function for GameView
@@ -43,6 +44,7 @@ class GameView:
         tank2_img = pygame.image.load("Tank1.png").convert_alpha()
 
         # Drawing the background
+        self._background.fill((153, 0, 0))
         self._screen.blit(self._background, (0, 0))
 
         # Drawing Scoreboard
@@ -86,8 +88,39 @@ class GameView:
         pygame.display.flip()
 
     def splashpage(self):
+        self.timing += 1
         # Drawing the background
+
         self._screen.blit(self._background, (0, 0))
-        font1 = pygame.font.SysFont("freesanbold.ttf", 50)
-        scoreboard = font1.render("COMBAT", False, (230, 191, 0))
-        self._screen.blit(scoreboard, (465, 60))
+        font1 = pygame.font.SysFont("freesanbold.ttf", 100)
+        font2 = pygame.font.SysFont("notomono.ttf", 50)
+        font3 = pygame.font.SysFont("notomono.ttf", 40)
+
+        title = font1.render("--COMBAT--", False, (77, 106, 255))
+        authors = font3.render(
+            "By: Allan Huang, Sidney Taylor, Trinity Lee",
+            False,
+            (153, 170, 255),
+        )
+        press_s = font2.render("Press S to start", False, (255, 255, 255))
+        self._screen.blit(title, (300, 60))
+        self._screen.blit(authors, (200, 150))
+
+        if abs(self.timing - pygame.time.get_ticks()) > 200:
+            self._screen.blit(press_s, (350, 300))
+
+        if abs(self.timing - pygame.time.get_ticks()) >= 400:
+            self.timing = pygame.time.get_ticks()
+
+        pygame.display.flip()
+
+    def gameover(self, model):
+        self._screen.blit(self._background, (0, 0))
+        font2 = pygame.font.SysFont("notomono.ttf", 50)
+        font3 = pygame.font.SysFont("notomono.ttf", 40)
+
+        winner = font2.render(model.scoreboard, False, (77, 106, 255))
+        again = font3.render("press SPACE to restart", False, (255, 255, 255))
+        self._screen.blit(winner, (300, 60))
+        self._screen.blit(again, (200, 150))
+        pygame.display.flip()

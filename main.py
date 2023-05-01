@@ -26,8 +26,15 @@ class Game:
                 if event.type == pygame.QUIT:
                     return
 
-            self.model.update()
-            self.view.update(self.model)
+            if self.model.splash and self.model.gameover:
+                self.view.splashpage()
+
+            elif self.model.gameover:
+                self.view.gameover(self.model)
+
+            else:
+                self.model.update()
+                self.view.update(self.model)
 
 
 if __name__ == "__main__":
