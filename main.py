@@ -2,14 +2,25 @@
 
 import pygame
 
-from GameView import GameView
-from GameModel import GameModel
-from GameController import GameController
+from game_view import GameView
+from game_model import GameModel
+from game_controller import GameController
 
 
 class Game:
+
+    """A class that runs the entire Atari 2600 Combat
+    game
+
+    Attributes:
+        model: A GameModel object
+        controller: A GameController object
+        view: A GameView object
+    """
+
     def __init__(self):
         # Initializes MVC
+        """Initializes the Game class"""
         pygame.init()
         self.model = GameModel()
         self.controller = GameController(self.model)
@@ -17,24 +28,33 @@ class Game:
 
     # Super/Game loop
     def main(self):
+        """The main function which runs the game loop &
+        handles different screen displays and input events"""
+
+        # Game Loop
         while True:
             for event in pygame.event.get():
                 # If input was made
                 if event.type == pygame.KEYDOWN:
-                    self.controller.inputs(event.key)
+                    self.controller.get_inputs(event.key)
                 # If user wants to quit
                 if event.type == pygame.QUIT:
                     return
 
-            if self.model.splash and self.model.gameover:
-                self.view.splashpage()
+            self.screens()
 
-            elif self.model.gameover:
-                self.view.gameover(self.model)
+    def screens(self):
+        """A function that handles the different
+        Screen switches. Turned into a function for abstraction"""
+        if self.model.splash and self.model.gameover:
+            self.view.splashpage()
 
-            else:
-                self.model.update()
-                self.view.update(self.model)
+        elif self.model.gameover:
+            self.view.gameover(self.model)
+
+        else:
+            self.model.update()
+            self.view.update(self.model)
 
 
 if __name__ == "__main__":
