@@ -40,6 +40,8 @@ navigation_header:
   url: /about/
 - title: Blog
   url: /blog/
+- title: Report a bug
+  url: /bugs/
 
 # Footer nav
 navigation_footer:
