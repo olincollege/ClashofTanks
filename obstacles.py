@@ -32,7 +32,11 @@ class Obstacles:
         if map_type == 1:
             self.map1()
         if map_type == 2:
-            pass
+            self.map2()
+        if map_type == 3:
+            self.map3()
+        if map_type == 4:
+            self.map4()
 
     @property
     def layout(self):
@@ -89,6 +93,89 @@ class Obstacles:
             (19, 7),
             (19, 9),
             (19, 6),
+        ]
+
+        for loc in coord:
+            self.draw(loc[0], loc[1])
+            self.draw(1000 // self.size - 1 - loc[0], loc[1])
+
+    def map2(self):
+        """Draws layout 2 by filling in specific indexes of the
+        _layout list with rectangles. Automatically mirrors
+        the layout horizontally"""
+        coord = [
+            (10, 7),
+            (10, 12),
+            (9, 7),
+            (8, 7),
+            (9, 12),
+            (8, 12),
+            (3, 3),
+            (3, 4),
+            (3, 17),
+            (3, 16),
+        ]
+
+        for loc in coord:
+            self.draw(loc[0], loc[1])
+            self.draw(1000 // self.size - 1 - loc[0], loc[1])
+
+    def map3(self):
+        """Draws layout 3 by filling in specific indexes of the
+        _layout list with rectangles. Automatically mirrors
+        the layout horizontally"""
+        coord = [
+            (10, 7),
+            (10, 12),
+            (9, 7),
+            (8, 7),
+            (9, 12),
+            (8, 12),
+            (3, 3),
+            (3, 4),
+            (3, 17),
+            (3, 16),
+            (15, 10),
+            (15, 11),
+            (15, 9),
+            (17, 1),
+            (17, 18),
+        ]
+
+        for loc in coord:
+            self.draw(loc[0], loc[1])
+            self.draw(1000 // self.size - 1 - loc[0], loc[1])
+
+    def map4(self):
+        """Draws layout 4 by filling in specific indexes of the
+        _layout list with rectangles. Automatically mirrors
+        the layout horizontally"""
+        coord = [
+            (10, 7),
+            (10, 8),
+            (10, 9),
+            (10, 10),
+            (10, 11),
+            (10, 12),
+            (9, 7),
+            (8, 7),
+            (9, 12),
+            (8, 12),
+            (3, 3),
+            (3, 4),
+            (3, 17),
+            (3, 16),
+            (19, 10),
+            (19, 12),
+            (19, 13),
+            (19, 7),
+            (19, 9),
+            (19, 6),
+            (15, 10),
+            (15, 11),
+            (15, 9),
+            (17, 1),
+            (17, 18),
         ]
 
         for loc in coord:

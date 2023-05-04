@@ -1,5 +1,5 @@
 """"Model Class of the MVC game Combat"""
-
+from random import randrange
 import pygame
 from tank import Tank
 from bullet import Bullet
@@ -26,7 +26,7 @@ class GameModel:
 
         self.scores = [0, 0]
 
-        self.map = Obstacles(1)
+        self.map = Obstacles(2)
         self.states = {"gameover": True, "splash": True}
 
         # Making Player 1 Tank & Bullet. Same sprite Group
@@ -66,6 +66,8 @@ class GameModel:
             )
             # Update score & start next round
             self.scores[0] += 1
+            pygame.mixer.Sound.play(pygame.mixer.Sound("audio/explosion.mp3"))
+            pygame.mixer.music.stop()
             self.next_round()
 
         # Player 2's bullet hitting player 1
@@ -77,6 +79,9 @@ class GameModel:
             )
             # Update score & start next round
             self.scores[1] += 1
+
+            pygame.mixer.Sound.play(pygame.mixer.Sound("audio/explosion.mp3"))
+            pygame.mixer.music.stop()
             self.next_round()
 
         # Obstacle Collision Detection
@@ -86,10 +91,18 @@ class GameModel:
                     # Bullet1 interaction with an obstacle
                     if pygame.Rect.colliderect(self.bullet1.bullet, obstacle):
                         self.bullet1.ricochet()
+                        pygame.mixer.Sound.play(
+                            pygame.mixer.Sound("audio/ricochet.wav")
+                        )
+                        pygame.mixer.music.stop()
 
                     # Bullet2 interaction with an obstacle
                     if pygame.Rect.colliderect(self.bullet2.bullet, obstacle):
                         self.bullet2.ricochet()
+                        pygame.mixer.Sound.play(
+                            pygame.mixer.Sound("audio/ricochet.wav")
+                        )
+                        pygame.mixer.music.stop()
 
                     # Tanks don't go through obstacles
                     if pygame.Rect.colliderect(self.player1.hitbox, obstacle):
@@ -102,6 +115,7 @@ class GameModel:
         # Check winner
         if win_score in (self.scores[0], self.scores[1]):
             self.states["gameover"] = True
+            self.states["splash"] = False
 
     # Helper Functions
     def next_round(self):
@@ -130,11 +144,13 @@ class GameModel:
         A helper function that resets the entire state of the model by resetting
         all the mutable variables that were used throughout the game.
         """
+        pygame.mixer.Sound.play(pygame.mixer.Sound("audio/restart.wav"))
+        pygame.mixer.music.stop()
 
         # Checks that the game is over
         if self.states["gameover"]:
             self.scores = [0, 0]
-            self.map = Obstacles(1)
+            self.map = Obstacles(randrange(0, 5))
             self.states["gameover"] = False
 
             # restarting all the tank objects

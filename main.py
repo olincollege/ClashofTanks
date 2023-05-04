@@ -22,6 +22,7 @@ class Game:
         # Initializes MVC
         """Initializes the Game class"""
         pygame.init()
+        pygame.mixer.init()
         self.model = GameModel()
         self.controller = GameController(self.model)
         self.view = GameView()
@@ -50,7 +51,7 @@ class Game:
             self.view.splashpage()
 
         elif self.model.gameover:
-            self.view.gameover(self.model)
+            self.view.gameover()
 
         else:
             self.model.update()

@@ -111,20 +111,22 @@ class GameView:
             (153, 170, 255),
         )
 
-        press_s = font2.render("Press S to start", False, (255, 255, 255))
+        press_s = font2.render("Press SPACE to start", False, (255, 255, 255))
         self._screen.blit(title, (300, 60))
         self._screen.blit(authors, (200, 150))
 
         # Creates a blinking affect for the press_s text
         if abs(self.timing - pygame.time.get_ticks()) > 200:
-            self._screen.blit(press_s, (350, 300))
+            self._screen.blit(press_s, (330, 300))
 
         if abs(self.timing - pygame.time.get_ticks()) >= 400:
             self.timing = pygame.time.get_ticks()
 
         pygame.display.flip()
 
-    def gameover(self, model):
+    def gameover(
+        self,
+    ):
         """A function that draws the game
         over screen
 
@@ -134,11 +136,10 @@ class GameView:
 
         self._screen.blit(self._background, (0, 0))
         font2 = pygame.font.SysFont("notomono.ttf", 50)
-        font3 = pygame.font.SysFont("notomono.ttf", 40)
 
         # Draws who the winner is
         winner = font2.render(self.scoreboard, False, (77, 106, 255))
-        again = font3.render("press SPACE to restart", False, (255, 255, 255))
-        self._screen.blit(winner, (300, 60))
-        self._screen.blit(again, (200, 150))
+        again = font2.render("press SPACE to restart", False, (255, 255, 255))
+        self._screen.blit(winner, (400, 60))
+        self._screen.blit(again, (330, 150))
         pygame.display.flip()

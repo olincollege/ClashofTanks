@@ -94,6 +94,10 @@ class Bullet(pygame.sprite.Sprite):
 
         self.is_moving = moving
 
+        if moving:
+            pygame.mixer.Sound.play(pygame.mixer.Sound("audio/shooting.wav"))
+            pygame.mixer.music.stop()
+
     def ricochet(self):
         """A function that simulates the ricochet
         behavior of a bullet when it bounces off obstacles
