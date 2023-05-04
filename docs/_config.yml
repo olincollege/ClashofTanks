@@ -23,10 +23,10 @@ plugins:
 # Site settings
 url: 'olincollege.github.io'
 baseurl: '/ClashofTanks/'
-title: 'ClashofTanks'
+title: 'ClashofTanks Team'
 description: 'Remaking the classic Atari tank game in Python.'
 permalink: pretty
-logo: "https://ibb.co/H7Kk99f"
+logo: "/assets/Tank1.png"
 
 # Pagination
 paginate: 5
