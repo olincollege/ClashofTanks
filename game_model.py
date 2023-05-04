@@ -26,7 +26,8 @@ class GameModel:
 
         self.scores = [0, 0]
 
-        self.map = Obstacles(2)
+        self.map = Obstacles(randrange(0, 5))
+
         self.states = {"gameover": True, "splash": True}
 
         # Making Player 1 Tank & Bullet. Same sprite Group
@@ -138,6 +139,7 @@ class GameModel:
             (self.player2.tank_x, self.player2.tank_y),
             self.player2.angle,
         )
+        self.map = Obstacles(randrange(0, 5))
 
     def restart(self):
         """
