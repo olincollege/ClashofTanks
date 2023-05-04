@@ -1,6 +1,6 @@
 ---
 title: Welcome to our remake of the classic "Tank" game!
-feature_image: "https://pbs.twimg.com/media/CYDVpRPWEAArq8l.jpg"
+feature_image: "https://pbs.twimg.com/media/CYDVpRPWEAArq8l.jpg =1350x335"
 feature_text:
 ---
 
