@@ -1,7 +1,6 @@
 ---
 title: Welcome to our remake of the classic "Tank" game!
-feature_image: "https://pbs.twimg.com/media/CYDVpRPWEAArq8l.jpg"
-feature_text:
+feature_image: "https://imgtr.ee/images/2023/05/03/aJ6DY.png"
 ---
 
 As sad as it is, not many people use retro gaming consoles anymore. To combat this injustice, we decided to turn back the clock and bring a game from the distant past to more modern screens.
