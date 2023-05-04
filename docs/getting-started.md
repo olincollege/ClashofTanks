@@ -19,7 +19,7 @@ Copy this link and open a new terminal window. Type `git clone URL` replacing UR
 
 
 ### Installing the required libraries
-to play our game, there is only one new library that you will need to install. The [pygame](https://pygame.org/news) library makes game development on Python much easier, and luckily it is very easy to install.
+To play our game, there is only one new library that you will need to install. The [pygame](https://pygame.org/news) library makes game development on Python much easier, and luckily it is very easy to install.
 
 Assuming you installed Python and are using the conda-based environment from Anaconda, you can simply use the pip package manager to install pygame.
 

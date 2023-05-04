@@ -27,6 +27,7 @@ title: 'ClashofTanks Team'
 description: 'Remaking the classic Atari tank game in Python.'
 permalink: pretty
 logo: "/assets/Tank1.png"
+email: "sidneyt27@gmail.com"
 
 # Pagination
 paginate: 5
