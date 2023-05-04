@@ -1,6 +1,6 @@
 ---
 title: Welcome to our remake of the classic "Tank" game!
-feature_image: "/assets/gameplay.png"
+feature_image: "assets/gameplay.png"
 feature_text:
 ---
 

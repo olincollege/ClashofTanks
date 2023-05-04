@@ -8,9 +8,9 @@ There were lots of different sources that made this project possible, so we will
 
 ### Us:
 
-{% include figure.html image="/assets/kofi.jpeg" alt="sidkofi's Github icon" %}\
-[{% include icon.html id="github" title="github" %} Sidney Taylor](https://github.com/sidkofi)\
-{% include figure.html image="/assets/trinity.png" alt="tlee10333's Github icon" %}\
-[{% include icon.html id="github" title="github" %} Trinity Lee](https://github.com/tlee10333)\
-{% include figure.html image="/assets/allan.png" alt="bigallan-0's Github icon" %}\
-[{% include icon.html id="github" title="github" %} Allan Huang](https://github.com/bigallan-0)\
+{% include figure.html image="assets/kofi.jpeg" alt="sidkofi's Github icon" %}\
+[{% include icon.html id="github" title="github" %} Sidney Taylor](https://github.com/sidkofi)
+{% include figure.html image="assets/trinity.png" alt="tlee10333's Github icon" %}\
+[{% include icon.html id="github" title="github" %} Trinity Lee](https://github.com/tlee10333)
+{% include figure.html image="assets/allan.png" alt="bigallan-0's Github icon" %}\
+[{% include icon.html id="github" title="github" %} Allan Huang](https://github.com/bigallan-0)
