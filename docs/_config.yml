@@ -36,12 +36,12 @@ paginate_path: blog/page:num
 navigation_header:
 - title: Home
   url: /
-- title: About
-  url: /about/
 - title: Bug fixes
   url: /blog/
 - title: Report a bug
   url: /bugs/
+- title: About
+  url: /about/
 
 # Footer nav
 navigation_footer:
@@ -53,9 +53,9 @@ collections:
   posts:
     title: Posts
     output: true
-    description: "My thoughts and ideas"
+    description: "A collection of all bugs found and addressed so far."
     feature_text: |
-      Welcome to my blog
+      Known bugs
     feature_image: "https://picsum.photos/2560/600?image=866"
 
 # Collection settings
