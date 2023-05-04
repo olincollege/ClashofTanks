@@ -22,7 +22,7 @@ plugins:
 
 # Site settings
 url: 'olincollege.github.io'
-baseurl: '/ClashofTanks/'
+baseurl: '/ClashofTanks'
 title: 'ClashofTanks Team'
 description: 'Remaking the classic Atari tank game in Python.'
 permalink: pretty
