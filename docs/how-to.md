@@ -11,9 +11,9 @@ We designed our game to be two-player, just like the original. Player One is the
 
 ### The Aim
 The aim of the game is to destroy the opposing tank by shooting it with a projectile. When a projectile is shot, it will move in that direction for a few seconds before either:
-- Colliding with an obstacle which it will bounce off at a random angle
-- Despawning (after a set time has passed with no collisions)
-- Hitting another tank
+    - Colliding with an obstacle which it will bounce off at a random angle
+    - Despawning (after a set time has passed with no collisions)
+    - Hitting another tank
 
 
 When one tank successfully shoots the other, the map will change to a randomly generated one with new obstacles and the starting positions will be reset. The player who destroyed the tank will receive one point.
