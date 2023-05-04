@@ -39,6 +39,8 @@ navigation_header:
   url: /
 - title: Install
   url: /getting-started/
+- title: How to play
+  url: /how-to/
 - title: Bug fixes
   url: /blog/
 - title: Report a bug
