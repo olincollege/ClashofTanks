@@ -36,6 +36,8 @@ paginate_path: blog/page:num
 navigation_header:
 - title: Home
   url: /
+- title: Install
+  url: /getting-started/
 - title: Bug fixes
   url: /blog/
 - title: Report a bug
