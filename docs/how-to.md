@@ -1,7 +1,7 @@
 ---
 title: How to play Clash of Tanks
 feature_text: If you haven't played before
-feature_image: "https://picsum.photos/1300/400?image=989"
+feature_image: "https://i.ytimg.com/vi/kyN9BZiKqJQ/maxresdefault.jpg"
 ---
 
 While the overall objective of the game is relatively simple, our game works a bit differently from the original implementation.
