@@ -12,7 +12,7 @@
 {% assign thanks_url = "/thanks/" %}
 {% endif %}
 
-<form class="form  form--{{ name_id }}" method="post" name="{{ name }}" action="{{ thanks_url }}" {% if
+<form class="form  form--{{ name_id }}" method="get" name="{{ name }}" action="{{ thanks_url }}" {% if
   include.netlify_form %} netlify-honeypot="bot-field" netlify {% endif %}>
   <fieldset class="fieldset  form__fieldset">
     <legend class="legend form__legend">{{ name }}</legend>
