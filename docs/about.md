@@ -1,5 +1,5 @@
 ---
-title: About our project
+title: About Our Project
 feature_image: "https://spectrum.ieee.org/media-library/atari-console.jpg?id=28145520&width=1200&height=900"
 ---
 
@@ -7,7 +7,7 @@ This project was inspired by the classic Atari 2600 Tank "Combat" game. We remad
 
 There were lots of different sources that made this project possible, so we will credit them below.
 
-### Us:
+### Meet the Team:
 
 ![](assets/kofi.jpeg)\
 [{% include icon.html id="github" title="github" %} Sidney Taylor](https://github.com/sidkofi) - Website Development\
