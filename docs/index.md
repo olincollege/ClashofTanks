@@ -4,8 +4,11 @@ feature_image: "https://www.giantbomb.com/a/uploads/original/9/93770/2367689-a26
 ---
 
 <style>
-img {
+img, video {
   border: 1px solid black;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 </style>
 ![](https://media.tenor.com/89bFu8hEqrEAAAAC/atari2600-80s.gif)
