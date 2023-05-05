@@ -5,4 +5,4 @@ feature_image: "https://forums.launchbox-app.com/uploads/monthly_2017_02/58a6819
 ---
 While our instructions should work on most devices, sometimes there will be bugs that we might have missed due to some devices having older drivers, or simply Linux/WSL being difficult. Let us know if you find one here and we will do our best to post a fix on the [Fixes blog](https://olincollege.github.io/ClashofTanks/blog/).
 
-{% include site-form.html %}
+{% include site-form.html netlify_form=true%}
