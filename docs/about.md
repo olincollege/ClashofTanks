@@ -5,6 +5,11 @@ feature_image: "https://spectrum.ieee.org/media-library/atari-console.jpg?id=281
 
 This project was inspired by the classic Atari 2600 Tank "Combat" game. We remade it so that it is runnable on devices using most flavors of Linux and Windows devices running WSL. If the experience isn't perfect for you, be sure to use this [link](https://olincollege.github.io/ClashofTanks/bugs/) to report any issues you find and check the [blog posts](https://olincollege.github.io/ClashofTanks/blog/) to see if it has been addressed already.
 
+### Documentation Video
+Below you can watch a video documenting the creation of this project.
+
+![](assets/video.mp4)\
+
 <style>
 img, video {
   border: 1px solid black;
@@ -13,9 +18,11 @@ img, video {
   margin-right: auto;
 }
 </style>
-![](https://www.wackybuttons.com/designcodes/0/110/1101319.png)
+
 
 There were lots of different sources that made this project possible, so we will credit them below.
+
+![](https://www.wackybuttons.com/designcodes/0/110/1101319.png)
 
 ### Meet the Team:
 
