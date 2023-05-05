@@ -27,7 +27,14 @@ class Obstacles:
         ]
 
         # Makes the border
-        self.border()
+        for i in range(1000 // self.size):
+            self.draw(i, 0)
+            self.draw(i, 500 // self.size - 1)
+
+        for i in range(1, 500 // self.size - 1):
+            self.draw(0, i)
+            self.draw(1000 // self.size - 1, i)
+
         # Select layout type
         if map_type == 1:
             self.map1()
@@ -52,22 +59,17 @@ class Obstacles:
             x: an int value
             y: an int value
         """
-        self._layout[ypara][xpara] = pygame.Rect(
-            xpara * self.size, ypara * self.size, self.size, self.size
-        )
+
+        try:
+            # Won't write negative indices
+            if xpara >= 0 and ypara >= 0:
+                self._layout[ypara][xpara] = pygame.Rect(
+                    xpara * self.size, ypara * self.size, self.size, self.size
+                )
+        except Exception:
+            pass
 
     # Helper Functions
-    def border(self):
-        """Draws a border by filling in all the border
-        indexes of the _layout list with rectangles"""
-        for i in range(1000 // self.size):
-            self.draw(i, 0)
-            self.draw(i, 500 // self.size - 1)
-
-        for i in range(1, 500 // self.size - 1):
-            self.draw(0, i)
-            self.draw(1000 // self.size - 1, i)
-
     def map1(self):
         """Draws layout 1 by filling in specific indexes of the
         _layout list with rectangles. Automatically mirrors

@@ -53,6 +53,20 @@ class Bullet(pygame.sprite.Sprite):
             An int _angle attribute"""
         return self._angle
 
+    @property
+    def bullet_x(self):
+        """
+        Return:
+            A float _x attribute"""
+        return self._x
+
+    @property
+    def bullet_y(self):
+        """
+        Return:
+            A float _y attribute"""
+        return self._y
+
     @angle.setter
     def angle(self, value):
         """Sets the _angle to a new value
@@ -72,6 +86,7 @@ class Bullet(pygame.sprite.Sprite):
         self._y += self._speed * sin(radians(-self._angle))
         self.bullet.x = self._x
         self.bullet.y = self._y
+        self.bullet.move(self._x, self._y)
 
     def moving(self, moving, loc, angle):
         """A function that sets the different
