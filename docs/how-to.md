@@ -5,6 +5,16 @@ feature_image: "https://spectrum.ieee.org/media-library/atari-console.jpg?id=281
 
 While the overall objective of the game is relatively simple, our game works a bit differently from the original implementation.
 
+<style>
+img, video {
+  border: 1px solid black;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
+![](https://pbs.twimg.com/media/C5MakjBWAAI0bgJ.jpg:large)
+
 ### The Players
 We designed our game to be two-player, just like the original. Player One is the tank on the left side and uses the standard **WASD** layout to move up, left, down and right respectively. Player One's tank uses the **E** button to shoot. Player Two is therefore the tank on the right side and uses **IJKL** to move around, with **O** being the button to shoot.
 
