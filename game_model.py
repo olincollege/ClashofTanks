@@ -22,9 +22,8 @@ class GameModel:
 
     def __init__(self):
         """Initializes GameModel object and external and
-        internal attributes
-        """
-        # Initalizing Groups
+        internal attributes"""
+        # Initializing Groups
 
         self.scores = [0, 0]
 
@@ -32,7 +31,7 @@ class GameModel:
 
         self.states = {"gameover": True, "splash": True}
 
-        # Making Player 1 Tank & Bullet. Same sprite Group
+        # Making Player 1 Tank & Bullet.
         self.player1 = Tank((150, 250), pygame.sprite.Group(), 2)
         self.bullet1 = Bullet(
             pygame.sprite.Group(),
@@ -40,7 +39,7 @@ class GameModel:
             self.player1.angle,
         )
 
-        # Making Player 2 Tank & Bullet. Same sprite Group
+        # Making Player 2 Tank & Bullet.
         self.player2 = Tank((850, 250), pygame.sprite.Group(), 2, 180)
         self.bullet2 = Bullet(
             pygame.sprite.Group(),
@@ -56,6 +55,7 @@ class GameModel:
         whether the game is over or not."""
 
         # Using Helper Function for shooting bullet behavior
+        # More information below.
         self.shooting(self.bullet1, self.player1)
         self.shooting(self.bullet2, self.player2)
 
@@ -117,6 +117,7 @@ class GameModel:
         win_score = 10
         # Check winner
         if win_score in (self.scores[0], self.scores[1]):
+            # move to gameover/win page
             self.states["gameover"] = True
             self.states["splash"] = False
 
@@ -161,9 +162,12 @@ class GameModel:
             self.restart()
 
     def shooting(self, bullet, player):
-        """A helper function that identifies whether a bullet is moving
-        and then updates its movement. If a bullet is supposed to be moving,
-        it will move for 3000 frames.
+        """An internal helper function that identifies whether a
+        bullet is moving and then updates its movement. If a bullet
+        is supposed to be moving, it will move for 3000 frames.
+
+        No unit tests because it's a internal helper function used
+        only for code abstraction
 
         Args:
             bullet: A Bullet object
@@ -189,8 +193,9 @@ class GameModel:
             value: A boolean value used to determine what
             the values of the attributes will be.
         """
-        self.states["gameover"] = value
-        self.states["splash"] = value
+        if isinstance(value, bool):
+            self.states["gameover"] = value
+            self.states["splash"] = value
 
     # properties
     @property

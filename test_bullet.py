@@ -1,10 +1,12 @@
 """
-Tests the Bullet class & its methods
+Unit tests for the Bullet class & its methods
 Note that because it is a class we will
 need to create an instance of it for testing
 purposes.
 
 """
+# pylint: disable-all
+
 from math import sin, cos, radians
 import pytest
 import pygame

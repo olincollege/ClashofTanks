@@ -61,5 +61,6 @@ class GameController:
     def __repr__(self):
         """Displays information of the class in a string
         format.
-        """
+        Return:
+            A string with the list of input types available"""
         return f"{self._input_types}"

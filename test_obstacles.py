@@ -1,19 +1,14 @@
 """
-Tests the obstacles class & its methods
+Unit tests for the obstacles class & its methods
 Note that because it is a class we will
 need to create an instance of it for testing
 purposes
 
-There are also no unit tests for internal
-helper functions that only use the function draw()
-(map1, map2) because we have unit tests for the draw
-function and the internal helper functions don't have
-any parameters. Hence it's pointless to have unit
-tests for these internal helper functions if we
-have unit tests for the draw() function. There
-are also no unit tests for @property.
+There are also no unit tests for @property.
 
 """
+# pylint: disable-all
+
 import pytest
 import pygame
 from obstacles import Obstacles

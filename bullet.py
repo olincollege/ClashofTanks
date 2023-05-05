@@ -6,7 +6,7 @@ import pygame
 class Bullet(pygame.sprite.Sprite):
     """
     A Bullet Class which is a pygame Sprite subclass
-    that represents the bullet/shell f0ired by the
+    that represents the bullet/shell fired by the
     tank in the game Combat.
 
     Attributes:
@@ -27,7 +27,7 @@ class Bullet(pygame.sprite.Sprite):
         Args:
             groups: a pygame.sprite.Group(). Identifies which
             group this object will be part of.
-            loc: a tuple containing 2 int value which is the x & y
+            loc: an tuple containing 2 int value which is the x & y
             location of the bullet
             angle: an int value which represents the degree the bullet
             is facing
