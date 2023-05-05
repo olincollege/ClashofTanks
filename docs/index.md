@@ -3,6 +3,13 @@ title: Welcome to our remake of the classic "Tank" game!
 feature_image: "https://www.giantbomb.com/a/uploads/original/9/93770/2367689-a2600_combat_2.jpg"
 ---
 
+<style>
+img {
+  border: 1px solid black;
+}
+</style>
+![](https://media.tenor.com/89bFu8hEqrEAAAAC/atari2600-80s.gif)
+
 Step into the time machine and journey back to the golden age of video games with a modern twist. 
 Team Butterfly is here to introduce the Pygame version of the classic Atari 2600 game of Combat, a nostalgic 
 trip down memory lane that will transport you back to the days of pixelated graphics and simple controls. 
