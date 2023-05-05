@@ -1,6 +1,5 @@
 ---
 title: Installing our game
-feature_text: First steps
 feature_image: "https://i.ebayimg.com/images/g/1TQAAOSw7oleIed0/s-l1600.jpg"
 ---
 

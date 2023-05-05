@@ -1,6 +1,6 @@
 ---
-title: Welcome to our remake of the classic "Tank" game!
-feature_image: "https://pbs.twimg.com/media/C5MakjBWAAI0bgJ.jpg:large"
+title: Welcome to our remake of the classic Combat "Tank" game!
+feature_image: "https://forums.launchbox-app.com/uploads/monthly_2017_02/58a6819b1cbfa_Atari2600.png.1e8efb3764e25ab7b2d38e5f41a6d26f.png"
 ---
 
 <style>

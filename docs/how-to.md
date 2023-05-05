@@ -1,6 +1,5 @@
 ---
 title: How to play Clash of Tanks
-feature_text: If you haven't played before
 feature_image: "https://spectrum.ieee.org/media-library/atari-console.jpg?id=28145520&width=1200&height=900"
 ---
 

@@ -1,6 +1,5 @@
 ---
 title: Report an issue
-feature_text: Just in case something doesn't work.
 feature_image: "https://picsum.photos/1300/400?image=989"
 
 ---
