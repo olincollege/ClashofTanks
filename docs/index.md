@@ -3,7 +3,7 @@ title: Welcome to our remake of the classic Combat "Tank" game!
 feature_image: "https://forums.launchbox-app.com/uploads/monthly_2017_02/58a6819b1cbfa_Atari2600.png.1e8efb3764e25ab7b2d38e5f41a6d26f.png"
 ---
 
-<link rel="icon" href = "/assets/favicon.ico" type="image/png">
+<!-- <link rel="icon" href = "/assets/favicon.ico" type="image/png"> -->
 <style>
 img, video {
   border: 1px solid black;

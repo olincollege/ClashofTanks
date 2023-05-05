@@ -26,7 +26,7 @@ baseurl: '/ClashofTanks'
 title: 'ClashofTanks Team'
 description: 'Remaking the classic Atari tank game in Python.'
 permalink: pretty
-logo: "/assets/Tank1.png"
+logo: "/assets/favicon.ico"
 email: "sidneyt27@gmail.com"
 
 # Pagination
