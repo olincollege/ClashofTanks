@@ -59,9 +59,7 @@ collections:
     title: Posts
     output: true
     description: "A collection of all bugs found and addressed so far."
-    feature_text: |
-      Known bugs
-    feature_image: "https://picsum.photos/2560/600?image=866"
+    feature_image: "https://i.imgur.com/tvapsqEl.jpg"
 
 # Collection settings
 defaults:
