@@ -40,3 +40,6 @@ Use the links at the top right of the page to learn more about how to play the g
 
 {% include button.html text="Play it now!" icon="github" link="https://github.com/olincollege/ClashofTanks" color="#0366d6" %}
 
+
+<small><em>Note: All trademarks and registered trademarks used or referred to on this site are the property of their respective owners. Use of any Atari trademarks or imagery related to Atari, Atari 2600, the game of Combat on the Atari 2600, or any other trademark or intellectual property belonging to Atari in connection with our website is not intended to imply endorsement or sponsorship. We are not affiliated with or endorsed by Atari in any way.
+</em></small>
