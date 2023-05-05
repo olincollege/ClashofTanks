@@ -27,6 +27,7 @@ title: 'ClashofTanks Team'
 description: 'Remaking the classic Atari tank game in Python.'
 permalink: pretty
 logo: "/assets/Tank1.png"
+email: "sidneyt27@gmail.com"
 
 # Pagination
 paginate: 5
@@ -36,6 +37,10 @@ paginate_path: blog/page:num
 navigation_header:
 - title: Home
   url: /
+- title: Install
+  url: /getting-started/
+- title: How to play
+  url: /how-to/
 - title: Bug fixes
   url: /blog/
 - title: Report a bug
