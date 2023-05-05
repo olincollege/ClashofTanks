@@ -1,6 +1,6 @@
 ---
 title: Welcome to our remake of the classic "Tank" game!
-feature_image: "https://1.bp.blogspot.com/--emh7Xc-oQk/XC-ag_4TFLI/AAAAAAAAocA/puWtSACB86o7HgUoNvJO8H1kxbqSt4LEgCLcBGAs/s1600/combat-atari-port.png"
+feature_image: "https://www.8-bitcentral.com/images/reviews/atari2600/combat2600Screen.jpg"
 ---
 
 Step into the time machine and journey back to the golden age of video games with a modern twist. 
