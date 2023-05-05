@@ -8,7 +8,7 @@ This project was inspired by the classic Atari 2600 Tank "Combat" game. We remad
 ### Documentation Video
 Below you can watch a video documenting the creation of this project.
 
-![](assets/video.mp4)\
+{% include video.html id="Mquqo2yvUH4" %}
 
 <style>
 img, video {
