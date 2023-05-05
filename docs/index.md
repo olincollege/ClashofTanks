@@ -10,6 +10,8 @@ Rediscover the joy and excitement of this beloved game, now revamped for a new e
 staying true to its roots. Get ready to indulge in some classic nostalgia as we relive the bygone days of 
 early video gaming history.
 
+![](assets/Demo_opt.gif)\
+
 The Atari 2600, released in 1977, revolutionized the home video game console industry by allowing users to 
 play a variety of games using interchangeable cartridges. The console was a massive success, selling 
 millions of units and ushering in a new era of video games. One of the most popular games on the Atari 2600 
