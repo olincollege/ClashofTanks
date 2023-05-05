@@ -66,8 +66,10 @@ class Obstacles:
                 self._layout[ypara][xpara] = pygame.Rect(
                     xpara * self.size, ypara * self.size, self.size, self.size
                 )
-        except Exception:
-            pass
+        except IndexError as exc:
+            print(exc)
+        except TypeError as exc:
+            print(exc)
 
     # Helper Functions
     def map1(self):
