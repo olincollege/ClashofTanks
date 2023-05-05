@@ -30,4 +30,4 @@ When one tank successfully shoots the other, the map will change to a randomly g
 
 To win the game, you need to reach 10 points against the other player. There is no time limit!
 
-![](assets/kills.gif:large)
+![](assets/kills.gif)
