@@ -67,7 +67,7 @@ class GameModel:
             )
             # Update score & start next round
             self.scores[0] += 1
-            pygame.mixer.Sound.play(pygame.mixer.Sound("audio/explosion.mp3"))
+            pygame.mixer.Sound.play(pygame.mixer.Sound("audio/explosion.wav"))
             pygame.mixer.music.stop()
             self.next_round()
 
@@ -81,7 +81,7 @@ class GameModel:
             # Update score & start next round
             self.scores[1] += 1
 
-            pygame.mixer.Sound.play(pygame.mixer.Sound("audio/explosion.mp3"))
+            pygame.mixer.Sound.play(pygame.mixer.Sound("audio/explosion.wav"))
             pygame.mixer.music.stop()
             self.next_round()
 
