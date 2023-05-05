@@ -1,6 +1,6 @@
 ---
 title: Welcome to our remake of the classic "Tank" game!
-feature_image: "https://www.vizzed.com/boards/upload/files/Atari2600artwip.jpg"
+feature_image: "https://www.giantbomb.com/a/uploads/original/9/93770/2367689-a2600_combat_2.jpg"
 ---
 
 Step into the time machine and journey back to the golden age of video games with a modern twist. 
