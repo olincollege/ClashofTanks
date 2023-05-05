@@ -8,7 +8,14 @@ Thanks for opting to try our game! Playing games from a Github repo isn't as eas
 ### Forking the repo
 To get started, you will need to fork the repository. You can do this by navigating to the [project page](https://github.com/olincollege/ClashofTanks) and clicking the green "Code" button.
 
-
+<style>
+img, video {
+  border: 1px solid black;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
 ![](assets/setup-guide/fork-repo.png)
 
 Copy this link and open a new terminal window. Type `git clone URL` replacing URL with the URL you just copied. If you normally keep cloned repositories in a specific folder, be sure to use the `cd` command to move into that directory before using `git clone`. If everything worked well, you should see the following:
