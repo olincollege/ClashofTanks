@@ -1,6 +1,6 @@
 """
 Tests the Tank class & its methods
-Note that because it is a class we will 
+Note that because it is a class we will
 need to create an instance of it for testing
 purposes
 
@@ -88,7 +88,7 @@ COORD_ANGLED = [
 
 
 @pytest.mark.parametrize("dir, key", MOVE)
-def test_move_dir(dir, key):
+def test_move_dir(direction, key):
     """We test whether we are able to save our last direction to
     be the last direction after a running the move function
 
@@ -98,7 +98,7 @@ def test_move_dir(dir, key):
     """
     tank = Tank((150, 250), pygame.sprite.Group(), 2)
 
-    tank.move(dir)
+    tank.move(direction)
     assert tank.lastdir == key
 
 

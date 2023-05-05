@@ -1,8 +1,17 @@
 """
 Tests the obstacles class & its methods
-Note that because it is a class we will 
+Note that because it is a class we will
 need to create an instance of it for testing
 purposes
+
+There are also no unit tests for internal
+helper functions that only use the function draw()
+(map1, map2) because we have unit tests for the draw
+function and the internal helper functions don't have
+any parameters. Hence it's pointless to have unit
+tests for these internal helper functions if we
+have unit tests for the draw() function. There
+are also no unit tests for @property.
 
 """
 import pytest
@@ -39,11 +48,12 @@ LAYOUT = [
 
 @pytest.mark.parametrize("coord, key", DRAW)
 def test_draw(coord, key):
-    """We test whether we were able to write to correct index using the draw data
+    """We test whether we were able to write to correct index
+    using the draw data
 
     Args:
-        coord: A list with a length of 2. The first index contains the x coordinate,
-        the second index contains the y coordinate.
+        coord: A list with a length of 2. The first index contains
+        the x coordinate,the second index contains the y coordinate.
         Each index does not have to be an int, but it generally is.
         key: A type (pygame.Error, Exception) which indicates whether
         the index was filled or what error is returned.
@@ -54,11 +64,12 @@ def test_draw(coord, key):
 
     # IF something was written successfully
     try:
-        assert type(obstacle.layout[coord[1]][coord[0]]) == key
+        assert isinstance(obstacle.layout[coord[1]][coord[0]]) == key
     # If error thrown, should be error we're expecting
-    except Exception as exc:
-        print(exc)
-        assert type(exc) == key
+    except TypeError as exc:
+        assert isinstance(exc) == key
+    except IndexError as exc:
+        assert isinstance(exc) == key
 
 
 @pytest.mark.parametrize("coord, key", LAYOUT)
@@ -66,10 +77,11 @@ def test_layout(coord, key):
     """We test whether layout saves the correct information
 
     Args:
-        coord: A list with a length of 2. The first index contains the x coordinate,
-        the second index contains the y coordinate.
+        coord: A list with a length of 2. The first index contains
+        the x coordinate, the second index contains the y coordinate.
         Each index does not have to be an int, but it generally is.
-        key: A pygame.Rect or int which indicates what the index should contain
+        key: A pygame.Rect or int which indicates what the index
+        should contain
     """
 
     obstacle = Obstacles(0)

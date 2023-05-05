@@ -1,8 +1,8 @@
 """
 Tests the Bullet class & its methods
-Note that because it is a class we will 
+Note that because it is a class we will
 need to create an instance of it for testing
-purposes
+purposes.
 
 """
 from math import sin, cos, radians
@@ -92,13 +92,13 @@ def test_move(angle, key):
 
 
 @pytest.mark.parametrize("loc, key", MOVING)
-def test_movingT(loc, key):
+def test_moving(loc, key):
     """We test whether the after moving the values of x & y
     have been correctly set through the moving function
-    with account for offset.
+    with account for offset (Which is -5).
     Args:
 
-        loc: A tuple with 2 integers which represent
+        loc: A tuple with 2 intege  rs which represent
         the (x,y) coord respectively.
         key: loc: A tuple with 2 integers which represent
         the (x,y) coord respectively after moving.
