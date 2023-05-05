@@ -36,13 +36,135 @@ DRAW = [
     ([10, 0.5], TypeError),
 ]
 
+
 LAYOUT = [
-    # Testing filled index
-    ([0, 0], pygame.Rect(0, 0, 25, 25)),
-    # Testing empty index
-    ([3, 3], 0),
-    # Testing filled index
-    ([0, 4], pygame.Rect(0, 4 * 25, 25, 25)),
+    # Test Layout 1
+    (
+        0,
+        [
+            (10, 7),
+            (10, 8),
+            (10, 9),
+            (10, 10),
+            (10, 11),
+            (10, 12),
+            (9, 7),
+            (8, 7),
+            (9, 12),
+            (8, 12),
+            (3, 3),
+            (3, 4),
+            (3, 17),
+            (3, 16),
+            (19, 10),
+            (19, 12),
+            (19, 13),
+            (19, 7),
+            (19, 9),
+            (19, 6),
+        ],
+    ),
+    # Test Layout 2
+    (
+        1,
+        [
+            (10, 7),
+            (10, 12),
+            (9, 7),
+            (8, 7),
+            (9, 12),
+            (8, 12),
+            (3, 3),
+            (3, 4),
+            (3, 17),
+            (3, 16),
+        ],
+    ),
+    # Test Layout 3
+    (
+        2,
+        [
+            (10, 7),
+            (10, 12),
+            (9, 7),
+            (8, 7),
+            (9, 12),
+            (8, 12),
+            (3, 3),
+            (3, 4),
+            (3, 17),
+            (3, 16),
+            (15, 10),
+            (15, 11),
+            (15, 9),
+            (17, 1),
+            (17, 18),
+        ],
+    ),
+    # Test Layout 4
+    (
+        3,
+        [
+            (10, 7),
+            (10, 8),
+            (10, 9),
+            (10, 10),
+            (10, 11),
+            (10, 12),
+            (9, 7),
+            (8, 7),
+            (9, 12),
+            (8, 12),
+            (3, 3),
+            (3, 4),
+            (3, 17),
+            (3, 16),
+            (19, 10),
+            (19, 12),
+            (19, 13),
+            (19, 7),
+            (19, 9),
+            (19, 6),
+            (15, 10),
+            (15, 11),
+            (15, 9),
+            (17, 1),
+            (17, 18),
+        ],
+    ),
+    (
+        4,
+        [
+            (8, 12),
+            (3, 3),
+            (15, 3),
+            (15, 6),
+            (15, 7),
+            (15, 4),
+            (15, 2),
+            (14, 6),
+            (14, 7),
+            (16, 6),
+            (16, 7),
+            (16, 5),
+            (16, 4),
+            (15, 17),
+            (15, 14),
+            (15, 13),
+            (15, 16),
+            (14, 14),
+            (14, 13),
+            (16, 14),
+            (16, 13),
+            (16, 15),
+            (16, 16),
+            (3, 17),
+            (8, 11),
+            (8, 10),
+            (8, 9),
+            (8, 8),
+        ],
+    ),
 ]
 
 
@@ -64,26 +186,37 @@ def test_draw(coord, key):
 
     # IF something was written successfully
     try:
-        assert isinstance(obstacle.layout[coord[1]][coord[0]]) == key
+        assert isinstance(obstacle.layout[coord[1]][coord[0]], key)
     # If error thrown, should be error we're expecting
     except TypeError as exc:
-        assert isinstance(exc) == key
+        assert isinstance(exc, key)
     except IndexError as exc:
-        assert isinstance(exc) == key
+        assert isinstance(exc, key)
 
 
-@pytest.mark.parametrize("coord, key", LAYOUT)
-def test_layout(coord, key):
+@pytest.mark.parametrize("layout, coord", LAYOUT)
+def test_layout(layout, coord):
     """We test whether layout saves the correct information
 
     Args:
-        coord: A list with a length of 2. The first index contains
-        the x coordinate, the second index contains the y coordinate.
-        Each index does not have to be an int, but it generally is.
-        key: A pygame.Rect or int which indicates what the index
-        should contain
+        coord: A list with tuples nested in the index with a length of 2.
+        The first index contains the x coordinate, the second index
+        contains the y coordinate.
+
+        layout: A int which indicates what the layout
+        obstacle it should be
     """
 
-    obstacle = Obstacles(0)
+    obstacle = Obstacles(layout)
 
-    assert obstacle.layout[coord[1]][coord[0]] == key
+    for loc in coord:
+        print(loc)
+        print(obstacle.layout[loc[1]][loc[0]])
+        # Check it works
+        assert obstacle.layout[loc[1]][loc[0]] == pygame.Rect(
+            loc[0] * 25, loc[1] * 25, 25, 25
+        )
+        # Check Mirroring
+        assert obstacle.layout[loc[1]][1000 // 25 - 1 - loc[0]] == pygame.Rect(
+            (1000 // 25 - 1 - loc[0]) * 25, loc[1] * 25, 25, 25
+        )

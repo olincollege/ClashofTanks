@@ -87,7 +87,7 @@ COORD_ANGLED = [
 ]
 
 
-@pytest.mark.parametrize("dir, key", MOVE)
+@pytest.mark.parametrize("direction, key", MOVE)
 def test_move_dir(direction, key):
     """We test whether we are able to save our last direction to
     be the last direction after a running the move function

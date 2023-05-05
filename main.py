@@ -42,20 +42,21 @@ class Game:
                 if event.type == pygame.QUIT:
                     return
 
-            self.screens()
+            if self.model.splash and self.model.gameover:
+                self.view.splashpage()
+            elif self.model.gameover:
+                self.view.gameover()
 
-    def screens(self):
-        """A function that handles the different
-        Screen switches. Turned into a function for abstraction"""
-        if self.model.splash and self.model.gameover:
-            self.view.splashpage()
+            else:
+                self.model.update()
+                self.view.update(self.model)
 
-        elif self.model.gameover:
-            self.view.gameover()
-
-        else:
-            self.model.update()
-            self.view.update(self.model)
+    def __repr__(self):
+        """A string representation of the class.
+        Return:
+            Information on the model, view, and controller
+            classes used in the gamey"""
+        return f"{self.model}, {self.view}, {self.controller}"
 
 
 if __name__ == "__main__":

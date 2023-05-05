@@ -36,14 +36,7 @@ class Obstacles:
             self.draw(1000 // self.size - 1, i)
 
         # Select layout type
-        if map_type == 1:
-            self.map1()
-        if map_type == 2:
-            self.map2()
-        if map_type == 3:
-            self.map3()
-        if map_type == 4:
-            self.map4()
+        self.map(map_type)
 
     @property
     def layout(self):
@@ -72,116 +65,123 @@ class Obstacles:
             print(exc)
 
     # Helper Functions
-    def map1(self):
+    def map(self, layout):
         """Draws layout 1 by filling in specific indexes of the
         _layout list with rectangles. Automatically mirrors
-        the layout horizontally"""
+        the layout horizontally
+
+        Args:
+            layout: An int that indicates which layout"""
         coord = [
-            (10, 7),
-            (10, 8),
-            (10, 9),
-            (10, 10),
-            (10, 11),
-            (10, 12),
-            (9, 7),
-            (8, 7),
-            (9, 12),
-            (8, 12),
-            (3, 3),
-            (3, 4),
-            (3, 17),
-            (3, 16),
-            (19, 10),
-            (19, 12),
-            (19, 13),
-            (19, 7),
-            (19, 9),
-            (19, 6),
+            [
+                (10, 7),
+                (10, 8),
+                (10, 9),
+                (10, 10),
+                (10, 11),
+                (10, 12),
+                (9, 7),
+                (8, 7),
+                (9, 12),
+                (8, 12),
+                (3, 3),
+                (3, 4),
+                (3, 17),
+                (3, 16),
+                (19, 10),
+                (19, 12),
+                (19, 13),
+                (19, 7),
+                (19, 9),
+                (19, 6),
+            ],
+            [
+                (10, 7),
+                (10, 12),
+                (9, 7),
+                (8, 7),
+                (9, 12),
+                (8, 12),
+                (3, 3),
+                (3, 4),
+                (3, 17),
+                (3, 16),
+            ],
+            [
+                (10, 7),
+                (10, 12),
+                (9, 7),
+                (8, 7),
+                (9, 12),
+                (8, 12),
+                (3, 3),
+                (3, 4),
+                (3, 17),
+                (3, 16),
+                (15, 10),
+                (15, 11),
+                (15, 9),
+                (17, 1),
+                (17, 18),
+            ],
+            [
+                (10, 7),
+                (10, 8),
+                (10, 9),
+                (10, 10),
+                (10, 11),
+                (10, 12),
+                (9, 7),
+                (8, 7),
+                (9, 12),
+                (8, 12),
+                (3, 3),
+                (3, 4),
+                (3, 17),
+                (3, 16),
+                (19, 10),
+                (19, 12),
+                (19, 13),
+                (19, 7),
+                (19, 9),
+                (19, 6),
+                (15, 10),
+                (15, 11),
+                (15, 9),
+                (17, 1),
+                (17, 18),
+            ],
+            [
+                (8, 12),
+                (3, 3),
+                (15, 3),
+                (15, 6),
+                (15, 7),
+                (15, 4),
+                (15, 2),
+                (14, 6),
+                (14, 7),
+                (16, 6),
+                (16, 7),
+                (16, 5),
+                (16, 4),
+                (15, 17),
+                (15, 14),
+                (15, 13),
+                (15, 16),
+                (14, 14),
+                (14, 13),
+                (16, 14),
+                (16, 13),
+                (16, 15),
+                (16, 16),
+                (3, 17),
+                (8, 11),
+                (8, 10),
+                (8, 9),
+                (8, 8),
+            ],
         ]
-
-        for loc in coord:
-            self.draw(loc[0], loc[1])
-            self.draw(1000 // self.size - 1 - loc[0], loc[1])
-
-    def map2(self):
-        """Draws layout 2 by filling in specific indexes of the
-        _layout list with rectangles. Automatically mirrors
-        the layout horizontally"""
-        coord = [
-            (10, 7),
-            (10, 12),
-            (9, 7),
-            (8, 7),
-            (9, 12),
-            (8, 12),
-            (3, 3),
-            (3, 4),
-            (3, 17),
-            (3, 16),
-        ]
-
-        for loc in coord:
-            self.draw(loc[0], loc[1])
-            self.draw(1000 // self.size - 1 - loc[0], loc[1])
-
-    def map3(self):
-        """Draws layout 3 by filling in specific indexes of the
-        _layout list with rectangles. Automatically mirrors
-        the layout horizontally"""
-        coord = [
-            (10, 7),
-            (10, 12),
-            (9, 7),
-            (8, 7),
-            (9, 12),
-            (8, 12),
-            (3, 3),
-            (3, 4),
-            (3, 17),
-            (3, 16),
-            (15, 10),
-            (15, 11),
-            (15, 9),
-            (17, 1),
-            (17, 18),
-        ]
-
-        for loc in coord:
-            self.draw(loc[0], loc[1])
-            self.draw(1000 // self.size - 1 - loc[0], loc[1])
-
-    def map4(self):
-        """Draws layout 4 by filling in specific indexes of the
-        _layout list with rectangles. Automatically mirrors
-        the layout horizontally"""
-        coord = [
-            (10, 7),
-            (10, 8),
-            (10, 9),
-            (10, 10),
-            (10, 11),
-            (10, 12),
-            (9, 7),
-            (8, 7),
-            (9, 12),
-            (8, 12),
-            (3, 3),
-            (3, 4),
-            (3, 17),
-            (3, 16),
-            (19, 10),
-            (19, 12),
-            (19, 13),
-            (19, 7),
-            (19, 9),
-            (19, 6),
-            (15, 10),
-            (15, 11),
-            (15, 9),
-            (17, 1),
-            (17, 18),
-        ]
-
-        for loc in coord:
+        for loc in coord[layout]:
             self.draw(loc[0], loc[1])
             self.draw(1000 // self.size - 1 - loc[0], loc[1])

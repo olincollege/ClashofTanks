@@ -98,7 +98,7 @@ def test_moving(loc, key):
     with account for offset (Which is -5).
     Args:
 
-        loc: A tuple with 2 intege  rs which represent
+        loc: A tuple with 2 integers which represent
         the (x,y) coord respectively.
         key: loc: A tuple with 2 integers which represent
         the (x,y) coord respectively after moving.
