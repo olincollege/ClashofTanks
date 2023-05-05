@@ -1,6 +1,6 @@
 ---
 title: Welcome to our remake of the classic "Tank" game!
-feature_image: "https://www.giantbomb.com/a/uploads/original/9/93770/2367689-a2600_combat_2.jpg"
+feature_image: "https://pbs.twimg.com/media/C5MakjBWAAI0bgJ.jpg:large"
 ---
 
 <style>
