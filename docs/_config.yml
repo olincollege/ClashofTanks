@@ -75,3 +75,11 @@ defaults:
       type: "pages"
     values:
       layout: page # Set the default layout for pages
+
+favicons:
+  16: '/assets/favicons/logo@16px.png'
+  32: '/assets/favicons/logo@32px.png'
+  96: '/assets/favicons/logo@96px.png'
+  120: '/assets/favicons/logo@120px.png'
+  144: '/assets/favicons/logo@144px.png'
+  180: '/assets/favicons/logo@180px.png'
