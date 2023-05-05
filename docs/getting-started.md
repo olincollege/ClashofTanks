@@ -1,7 +1,7 @@
 ---
 title: Installing our game
 feature_text: First steps
-feature_image: "https://picsum.photos/1300/400?image=989"
+feature_image: "https://insidethemagic.net/wp-content/uploads/2017/06/Atari-735x400.jpg"
 ---
 
 Thanks for opting to try our game! Playing games from a Github repo isn't as easy as playing them on a web browser, so we have provided some instructions on how to play below.
