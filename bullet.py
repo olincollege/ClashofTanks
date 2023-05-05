@@ -86,7 +86,6 @@ class Bullet(pygame.sprite.Sprite):
         self._y += self._speed * sin(radians(-self._angle))
         self.bullet.x = self._x
         self.bullet.y = self._y
-        self.bullet.move(self._x, self._y)
 
     def moving(self, moving, loc, angle):
         """A function that sets the different
