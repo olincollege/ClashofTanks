@@ -30,7 +30,8 @@ class Game:
     # Super/Game loop
     def main(self):
         """The main function which runs the game loop &
-        handles different screen displays and input events"""
+        handles different screen displays and input events
+        """
 
         # Game Loop
         while True:
@@ -55,7 +56,8 @@ class Game:
         """A string representation of the class.
         Return:
             Information on the model, view, and controller
-            classes used in the gamey"""
+            classes used in the game
+        """
         return f"{self.model}, {self.view}, {self.controller}"
 
 

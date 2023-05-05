@@ -27,7 +27,7 @@ class Bullet(pygame.sprite.Sprite):
         Args:
             groups: a pygame.sprite.Group(). Identifies which
             group this object will be part of.
-            loc: an tuple containing 2 int value which is the x & y
+            loc: a tuple containing 2 int value which is the x & y
             location of the bullet
             angle: an int value which represents the degree the bullet
             is facing
@@ -50,21 +50,24 @@ class Bullet(pygame.sprite.Sprite):
     def angle(self):
         """
         Return:
-            An int _angle attribute"""
+            An int _angle attribute
+        """
         return self._angle
 
     @property
     def bullet_x(self):
         """
         Return:
-            A float _x attribute"""
+            A float _x attribute
+        """
         return self._x
 
     @property
     def bullet_y(self):
         """
         Return:
-            A float _y attribute"""
+            A float _y attribute
+        """
         return self._y
 
     @angle.setter
@@ -73,7 +76,8 @@ class Bullet(pygame.sprite.Sprite):
 
         Arg:
             value: an int value representing a
-            degree"""
+            degree
+        """
         self._angle = value
 
     def move(self):
@@ -115,5 +119,6 @@ class Bullet(pygame.sprite.Sprite):
     def ricochet(self):
         """A function that simulates the ricochet
         behavior of a bullet when it bounces off obstacles
-        by changing the direction of the bullet's trajectory"""
+        by changing the direction of the bullet's trajectory
+        """
         self._angle = 160 + self._angle

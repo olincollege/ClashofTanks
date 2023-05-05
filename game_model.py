@@ -11,17 +11,19 @@ class GameModel:
 
     Attributes:
             scores: a list with 2 int that keeps track of Player 1 & 2's score
-            map: a Obstacles object which set the obstacle layout
+            map: an Obstacles object which set the obstacle layout
             of the game
 
             player1: A Tank object for Player 1
             bullet1: A Bullet object for Player 1
             player2: A Tank object for Player 2
-            bullet2: A Bullet object for Player 2"""
+            bullet2: A Bullet object for Player 2
+    """
 
     def __init__(self):
         """Initializes GameModel object and external and
-        internal attributes"""
+        internal attributes
+        """
         # Initalizing Groups
 
         self.scores = [0, 0]
@@ -50,7 +52,7 @@ class GameModel:
         """A update function which keeps track of the game's state and
         manages the behavior of all the objects
 
-        It controls the shooting of the bullets, the collision detection, and
+        It controls the shooting of the bullets, collision detection, and
         whether the game is over or not."""
 
         # Using Helper Function for shooting bullet behavior
@@ -160,12 +162,13 @@ class GameModel:
 
     def shooting(self, bullet, player):
         """A helper function that identifies whether a bullet is moving
-        and then updates it's movement. If a bullet is supposed to be moving,
+        and then updates its movement. If a bullet is supposed to be moving,
         it will move for 3000 frames.
 
         Args:
             bullet: A Bullet object
-            player: A Tank object"""
+            player: A Tank object
+        """
 
         # If a bullet is supposed to be moving
         if bullet.is_moving is True:
@@ -179,30 +182,33 @@ class GameModel:
                 bullet.move()
 
     def start(self, value):
-        """A function that sets the value of the gameover and
+        """A function that sets the value of the game over and
          splash values
 
         Args:
             value: A boolean value used to determine what
-            the values of the attributes will be."""
+            the values of the attributes will be.
+        """
         self.states["gameover"] = value
         self.states["splash"] = value
 
     # properties
     @property
     def gameover(self):
-        """A decorator function for the the internal gameover attribute
+        """A decorator function for the internal game over attribute
 
         Return:
-            the boolean _gameover value"""
+            the boolean _gameover value
+        """
         return self.states["gameover"]
 
     @property
     def splash(self):
-        """A decorator function for the the internal splash attribute
+        """A decorator function for the internal splash attribute
 
         Return:
-            the boolean _splash value"""
+            the boolean _splash value
+        """
         return self.states["splash"]
 
     def __repr__(self):
@@ -210,5 +216,6 @@ class GameModel:
 
         Return:
             A string with information on the current scoreboard
-            and gameover state."""
+            and game over state.
+        """
         return f"{self.gameover}"

@@ -41,7 +41,8 @@ class Obstacles:
     @property
     def layout(self):
         """Return:
-        a list of the instance attribute _layout"""
+        a list of the instance attribute _layout
+        """
         return self._layout
 
     def draw(self, xpara, ypara):
@@ -71,7 +72,8 @@ class Obstacles:
         the layout horizontally
 
         Args:
-            layout: An int that indicates which layout"""
+            layout: An int that indicates which layout
+        """
         coord = [
             [
                 (10, 7),

@@ -89,8 +89,8 @@ COORD_ANGLED = [
 
 @pytest.mark.parametrize("direction, key", MOVE)
 def test_move_dir(direction, key):
-    """We test whether we are able to save our last direction to
-    be the last direction after a running the move function
+    """We test whether we can save our last direction to
+    be the last direction after running the move function
 
     Args:
         dir: An int that symbolizes the dir
@@ -104,12 +104,12 @@ def test_move_dir(direction, key):
 
 @pytest.mark.parametrize("angle, key", ANGLE)
 def test_angle(angle, key):
-    """We test whether we are able to rotate our tank by an angle.
+    """We test whether we can rotate our tank by an angle.
     Our tank is initialized at an angle of 10, so after rotation,
     our angle should be the angle + 10 degrees
 
     Args:
-        angle: An int that symbolizes the dengree angle to change by
+        angle: An int that symbolizes the degree angle to change by
         key: An int which is the correct total angle.
     """
     tank = Tank((150, 250), pygame.sprite.Group(), 2, 10)
@@ -123,7 +123,7 @@ def test_angle(angle, key):
 
 @pytest.mark.parametrize("angle, key", ANGLE_INITIAL)
 def test_initialize_angle(angle, key):
-    """We test whether we are able to initialize our tank at an angle.
+    """We test whether we can initialize our tank at an angle.
 
     Args:
         angle: An int that symbolizes the degree angle
@@ -143,7 +143,7 @@ def test_xy(coord, key):
     Args:
         coord: A tuple that symbolizes the x y int location
         of the tank
-        key: A tuple which is the correct x y int location.
+        key: A tuple that is the correct x y int location.
     """
     tank = Tank(coord, pygame.sprite.Group(), 2)
 
@@ -159,7 +159,7 @@ def test_xy_rotate(coord, key):
         coord: An tuple that symbolizes the x y int location
         of the tank initially
         key: A tuple which is the correct x y coord given
-        the tank is facing  at 45 degrees.
+        the tank is facing 45 degrees.
     """
     tank = Tank(coord, pygame.sprite.Group(), 1, 45)
 

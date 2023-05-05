@@ -82,7 +82,7 @@ def test_move(angle, key):
     Args:
         angle: an int angle in degrees that the bullet
         will be facing
-        key: A tuple with 2 integers which represent
+        key: A tuple with 2 integers that represent
         the (x,y) coord respectively after one move.
     """
     test_bullet = Bullet(pygame.sprite.Group(), (0, 0), angle)
@@ -98,9 +98,9 @@ def test_moving(loc, key):
     with account for offset (Which is -5).
     Args:
 
-        loc: A tuple with 2 integers which represent
+        loc: A tuple with 2 integers that represent
         the (x,y) coord respectively.
-        key: loc: A tuple with 2 integers which represent
+        key: loc: A tuple with 2 integers that represent
         the (x,y) coord respectively after moving.
     """
     test_bullet = Bullet(pygame.sprite.Group(), (0, 0), 0)

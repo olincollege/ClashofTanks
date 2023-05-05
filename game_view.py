@@ -29,7 +29,7 @@ class GameView:
         """Update function that updates the screen for each frame
         Args:
             model: A GameModel object that contains all
-            information regarding to the model of the game"""
+            information regarding the model of the game"""
 
         # saving which player is which
         tank1 = model.player1
@@ -94,8 +94,9 @@ class GameView:
         pygame.display.flip()
 
     def splashpage(self):
-        """A function that draws a splashpage
-        on the screen"""
+        """A function that draws a splash page
+        on the screen
+        """
 
         self.timing += 1
         # Drawing the background
@@ -132,7 +133,8 @@ class GameView:
 
         Args:
             model: A GameModel object used to
-            draw the gameover screen"""
+            draw the game over the screen.
+        """
 
         self._screen.blit(self._background, (0, 0))
         font2 = pygame.font.SysFont("notomono.ttf", 50)

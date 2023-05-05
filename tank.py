@@ -8,9 +8,9 @@ class Tank(pygame.sprite.Sprite):
     tanks in the Atari 2600 Combat game
 
     Attributes:
-        offset: a int that determines the offset of the hitbox
+        offset: an int that determines the offset of the hitbox
         from the Tank sprite image
-        lastdir: an int that keep tracks off the last direction
+        lastdir: an int that keeps track of the last direction
         the tank faced
     """
 
@@ -46,7 +46,7 @@ class Tank(pygame.sprite.Sprite):
     def tank_x(self):
         """
         Return:
-            An the int _x variable
+            The int _x variable
         """
         return self._x
 
@@ -54,7 +54,7 @@ class Tank(pygame.sprite.Sprite):
     def tank_y(self):
         """
         Return:
-            An the int _y variable
+            The int _y variable
         """
         return self._y
 
@@ -62,7 +62,7 @@ class Tank(pygame.sprite.Sprite):
     def hitbox(self):
         """
         Return:
-            An the int _hitbox variable
+            The int _hitbox variable
         """
         return self._hitbox
 
@@ -70,7 +70,7 @@ class Tank(pygame.sprite.Sprite):
     def angle(self):
         """
         Return:
-            An the int _angle variable
+            The int _angle variable
         """
         return self._angle
 
@@ -89,7 +89,7 @@ class Tank(pygame.sprite.Sprite):
     def speed(self):
         """
         Return:
-            An the int _speed variable
+            The int _speed variable
         """
         return self._speed
 
@@ -116,5 +116,6 @@ class Tank(pygame.sprite.Sprite):
 
         Args:
             angle: An int that represents the angle
-            in degrees"""
+            in degrees
+        """
         self._angle += angle

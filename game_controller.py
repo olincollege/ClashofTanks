@@ -9,13 +9,14 @@ class GameController:
     def __init__(self, model):
         """Initialization Function
         Args:
-            model: A GameModel Object"""
+            model: A GameModel Object
+        """
 
         # _model is a GameModel Object
         self._model = model
         # _move is an int that controls the tank movement input
         self._move = 5
-        # _turn is float that controls the angle a tank rotates by
+        # _turn is a float that controls the angle a tank rotates by
         self._turn = 22.5
 
         # _input_types is a dictionary with the keys being
@@ -52,11 +53,13 @@ class GameController:
         inputs per frame
 
         Args:
-            inputs: A pygame Event object"""
+            inputs: A pygame Event object
+        """
         if inputs in self._input_types:
             self._input_types[inputs]()
 
     def __repr__(self):
         """Displays information of the class in a string
-        format."""
+        format.
+        """
         return f"{self._input_types}"

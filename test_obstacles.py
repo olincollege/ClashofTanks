@@ -20,11 +20,11 @@ from obstacles import Obstacles
 
 
 DRAW = [
-    # Draws in correct location
+    # Draws in the correct location
     ([10, 5], pygame.Rect),
-    # Draws in correct location, last index
+    # Draws in the correct location, last index
     ([39, 19], pygame.Rect),
-    # Draws in correct location, first index
+    # Draws in the correct location, first index
     ([0, 0], pygame.Rect),
     # Doesn't accept negative indexes
     ([-2, -2], int),
@@ -175,9 +175,9 @@ def test_draw(coord, key):
 
     Args:
         coord: A list with a length of 2. The first index contains
-        the x coordinate,the second index contains the y coordinate.
+        the x coordinate, the second index contains the y coordinate.
         Each index does not have to be an int, but it generally is.
-        key: A type (pygame.Error, Exception) which indicates whether
+        key: A type (pygame.Error, Exception) that indicates whether
         the index was filled or what error is returned.
     """
     obstacle = Obstacles(0)
@@ -196,7 +196,7 @@ def test_draw(coord, key):
 
 @pytest.mark.parametrize("layout, coord", LAYOUT)
 def test_layout(layout, coord):
-    """We test whether layout saves the correct information
+    """We test whether the layout saves the correct information
 
     Args:
         coord: A list with tuples nested in the index with a length of 2.
